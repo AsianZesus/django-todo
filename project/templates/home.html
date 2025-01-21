@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock title %}
+{% block body %}
+  <h1>{{name}}</h1>
+  <table border="1">
+    <thead>
+      <th>SN</th>
+      <th>Name</th>
+      <th>Color</th>
+    </thead>
+    {% for person in persons %}
+    <tr>
+      <td>a</td>
+      <td>{{person.name}}</td>
+      <td>
+        {% if person.age < 18 %}Child
+        {% elif person.age >= 18 and person.age <= 40 %}
+        Adult
+        {% else %}
+        Old
+        {% endif %}
+        {{person.age}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p>Check out my <a href="">About</a> page.</p>
+{% endblock body %}
